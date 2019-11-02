@@ -34,7 +34,7 @@ Overview
 
 .. |version| image:: https://img.shields.io/pypi/v/homemate-bridge.svg
     :alt: PyPI Package latest release
-    :target: https://pypi.python.org/pypi/homemate-bridge
+    :target: https://pypi.python.org/pypi/homemate-bridgekepler.apk
 
 .. |commits-since| image:: https://img.shields.io/github/commits-since/insertjokehere/homemate-bridge/v0.1.1.svg
     :alt: Commits since latest release
@@ -80,7 +80,7 @@ Installation
 
 * Obtain the Orvibo 'PK' key (see below) as a `keys.json` file
 * Redirect all traffic for homemate.orvibo.com, TCP port 10001 to the machine running the bridge. The easiest way to do this is to override the DNS record, but how you can do this will greatly depend on how your network is set up
-* `Configure HomeAssistant <https://home-assistant.io/docs/mqtt/discovery/>_` to discover MQTT devices
+* `Configure HomeAssistant <https://home-assistant.io/docs/mqtt/discovery/> to discover MQTT devices
 * Install the bridge:
 ::
 
@@ -98,7 +98,7 @@ Getting the Orvibo 'PK' encryption key
 
 As part of the initial handshake with the server, the switch sends a 'hello' packet encrypted with a static key, and expects a packet encrypted with the same key in response that sets a different key for all subsequent packets. This is the 'PK' key, and is not included with the source code until I work out if there would be legal issues with doing so. Fortunately, Orvibo hardcode this key in the source code of the 'Kepler' Android app.
 
-* Download the `Kepler apk <http://www.orvibo.com/software/android/kepler.apk>_`
+* Download the `Kepler apk <http://www.orvibo.com/software/android/kepler.apk>
 * Run the `homemate-bridge-seed-keyfile --keys-file keys.json <path/to/apk>` script to extract the key and save it. Note that the file will be overwritten if it exists.
 
 Documentation
